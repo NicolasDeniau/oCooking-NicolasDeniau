@@ -14,10 +14,16 @@ const Navigation = () => {
         <li>
           <a href="/">A propos</a>
         </li>
-        <li>
-          <a href="/">Connexion</a>
-        </li>
-      </ul>
+        {isAuth ? (
+          <li>
+            <a href="/">Déconnexion</a>
+          </li>
+        ) : (
+          <li>
+            <a href="/">Connexion</a>
+          </li>
+        )}
+    </ul>
       {/* on veut modifier la valeur du state au clic sur le bouton Se connecter */}
       <button onClick={() => SetIsAuth(!isAuth)}>
       {/* si isAuth = true, alors, on affiche Se déconnecter, sinon, on affiche Se connecter */}
