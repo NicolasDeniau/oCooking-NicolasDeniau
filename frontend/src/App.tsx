@@ -4,6 +4,8 @@ import Header from "./components/layouts/Header";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import RecipeDetails from "./pages/RecipeDetails";
+import Login from "./pages/Login";
+import About from "./pages/About";
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
           {/* page 404 => * = n'importe quel URL */}
           <Route path="*" element={<NotFound />} />
           {/* route avec param dynamique => aller sur une recette (:param)*/}
+          <Route path="/connexion" element={<Login />} />
+          <Route path='a-propos' element={<About />} />
           <Route path="/recipe/:id" element={<RecipeDetails />} />
         </Routes>
       </main>
