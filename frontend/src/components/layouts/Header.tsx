@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../../assets/styles/header.scss";
 import Navigation from "./Navigation";
 
@@ -6,7 +7,7 @@ const Header = () => {
     <header>
       <div className="header__container">
         <h1>
-          <a href="/">Leviathon</a>
+          <Link to="">Leviathon</Link>
         </h1>
         <Navigation />
       </div>

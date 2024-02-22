@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../../assets/styles/navigation.scss";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
     // isAuth = false par défaut
@@ -14,20 +15,24 @@ const Navigation = () => {
         } else {
             setFullName(undefined);
         }
+
+
+        // Ternary
+        // !isAuth ? setFullName("Jérémy Dufroy") : setFullName(undefined);
     }
 
     return (
         <nav>
             <ul>
                 <li>
-                    <a href="/">Toutes les recettes</a>
+                    <Link to="/">Toutes les recettes</Link>
                 </li>
                 <li>
-                    <a href="/">A propos</a>
+                    <Link to="/a-propos">A propos</Link>
                 </li>
                 {isAuth && fullName !== "" && (
                     <li>
-                        <a href="/">Profil: {fullName}</a>
+                        <Link to="/profil">Profil: {fullName}</Link>
                     </li>
                 )}
                 {isAuth ? (
@@ -36,7 +41,7 @@ const Navigation = () => {
                     </li>
                 ) : (
                     <li>
-                        <a href="/">Connexion</a>
+                        <Link to="/connexion">Connexion</Link>
                     </li>
                 )}
             </ul>
