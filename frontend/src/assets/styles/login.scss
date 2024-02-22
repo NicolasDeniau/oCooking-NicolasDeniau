@@ -1,0 +1,35 @@
+@use "variables";
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  label {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      background: #fff;
+      border: 1px solid #cfcfcf;
+      border-radius: 5px;
+      padding: 8px 10px;
+      outline: none;
+    }
+  }
+
+  button {
+    background: variables.$primaryColor;
+    color: #fff;
+    border: 2px solid variables.$primaryColor;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background 300ms;
+
+    &:hover {
+      background: #fff;
+      color: variables.$primaryColor;
+    }
+  }
+}

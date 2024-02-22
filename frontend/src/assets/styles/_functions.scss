@@ -1,0 +1,5 @@
+@use "variables";
+
+@function getColor($type) {
+    @return map-get(variables.$recipeTypes, $type);
+}

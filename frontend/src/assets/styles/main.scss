@@ -1,0 +1,29 @@
+@use "mixins";
+@use "variables";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: variables.$lightColor;
+  font-family: 'Roboto', sans-serif;
+
+  &.dark {
+    background: #0c0c0c;
+  }
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.main__container {
+  @include mixins.content-container;
+}

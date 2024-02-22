@@ -1,0 +1,27 @@
+@use "mixins";
+@use "variables";
+@use "responsive";
+
+header {
+  background: #fff;
+  padding: 20px 0;
+  color: #000;
+
+  .header__container {
+    @include mixins.container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1 {
+    margin: 0;
+    @include responsive.phone {
+      display: none;
+    }
+
+    a {
+      color: variables.$primaryColor;
+    }
+  }
+}

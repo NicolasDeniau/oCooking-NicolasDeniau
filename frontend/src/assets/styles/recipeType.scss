@@ -1,0 +1,17 @@
+@use "variables";
+@use "functions";
+
+button {
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-right: 5px;
+
+    @each $type, $color in variables.$recipeTypes {
+        &.type--#{$type} {
+            /*background: $color;*/
+            background: functions.getColor($type);
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+    }
+}
