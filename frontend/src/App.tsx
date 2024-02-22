@@ -1,6 +1,9 @@
-import RecipesList from "./components/RecipesList";
+import { Route, Routes } from "react-router-dom";
 import Footer from "./components/layouts/Footer";
 import Header from "./components/layouts/Header";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import RecipeDetails from "./pages/RecipeDetails";
 
 const App = () => {
   return (
@@ -8,7 +11,13 @@ const App = () => {
       <Header />
 
       <main className="main__container">
-        <RecipesList />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* page 404 => * = n'importe quel URL */}
+          <Route path="*" element={<NotFound />} />
+          {/* route avec param dynamique => aller sur une recette (:param)*/}
+          <Route path="/recipe/:id" element={<RecipeDetails />} />
+        </Routes>
       </main>
 
       <Footer />

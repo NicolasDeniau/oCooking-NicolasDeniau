@@ -12,7 +12,7 @@ const Navigation = () => {
         if (!isAuth) {
             setFullName("Nicolas Deniau");
         } else {
-        setFullName(undefined);
+            setFullName(undefined);
         }
     }
 
@@ -25,7 +25,7 @@ const Navigation = () => {
                 <li>
                     <a href="/">A propos</a>
                 </li>
-                {isAuth && fullName !== undefined && (
+                {isAuth && fullName !== "" && (
                     <li>
                         <a href="/">Profil: {fullName}</a>
                     </li>
