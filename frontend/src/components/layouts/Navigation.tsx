@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "../../assets/styles/navigation.scss";
 import { Link } from "react-router-dom";
 
@@ -16,10 +16,16 @@ const Navigation = () => {
             setFullName(undefined);
         }
 
-
         // Ternary
         // !isAuth ? setFullName("Jérémy Dufroy") : setFullName(undefined);
     }
+
+    const disconnection = (event: React.SyntheticEvent) => {
+        event.preventDefault();
+        setIsAuth(false);
+        setFullName(undefined);
+      };
+    
 
     return (
         <nav>
@@ -37,7 +43,7 @@ const Navigation = () => {
                 )}
                 {isAuth ? (
                     <li>
-                        <a href="/">Déconnexion</a>
+                        <a href="/" onClick={(event) => disconnection(event)}>Déconnexion</a>
                     </li>
                 ) : (
                     <li>

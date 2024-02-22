@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound";
 import RecipeDetails from "./pages/RecipeDetails";
 import Login from "./pages/Login";
 import About from "./pages/About";
+import Profile from "./pages/Profile";
 
 const App = () => {
   return (
@@ -19,7 +20,8 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
           {/* route avec param dynamique => aller sur une recette (:param)*/}
           <Route path="/connexion" element={<Login />} />
-          <Route path='a-propos' element={<About />} />
+          <Route path='/a-propos' element={<About />} />
+          <Route path="/profil" element={<Profile />} />
           <Route path="/recipe/:id" element={<RecipeDetails />} />
         </Routes>
       </main>
