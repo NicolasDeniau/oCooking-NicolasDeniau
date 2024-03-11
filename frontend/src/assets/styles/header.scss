@@ -7,6 +7,11 @@ header {
   padding: 20px 0;
   color: #000;
 
+  button {
+    @include mixins.button;
+    background-color: red
+  }
+
   .header__container {
     @include mixins.container;
     display: flex;

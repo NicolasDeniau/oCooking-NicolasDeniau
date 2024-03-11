@@ -18,10 +18,10 @@ const App = () => {
           <Route path="/" element={<Home />} />
           {/* page 404 => * = n'importe quel URL */}
           <Route path="*" element={<NotFound />} />
-          {/* route avec param dynamique => aller sur une recette (:param)*/}
           <Route path="/connexion" element={<Login />} />
           <Route path='/a-propos' element={<About />} />
           <Route path="/profil" element={<Profile />} />
+          {/* route avec param dynamique => aller sur une recette (:param)*/}
           <Route path="/recipe/:id" element={<RecipeDetails />} />
         </Routes>
       </main>

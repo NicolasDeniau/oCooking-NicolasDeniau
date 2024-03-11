@@ -4,19 +4,28 @@ export const recipesData = [
         "name": "Poulet rôti aux herbes",
         "imgSrc": "https://picsum.photos/750/200",
         "description": "Un délicieux poulet rôti aux herbes aromatiques.",
+        "types": [
+            "rapide",
+            "viande"
+        ],
         "ingredients": [
             "1 poulet",
             "Herbes de Provence",
             "Sel",
             "Poivre"
         ],
-        "userId": 3
+        "userId": 3,
     },
     {
         "id": 2,
         "name": "Lasagnes bolognaises",
         "imgSrc": "https://picsum.photos/200/300",
         "description": "Des lasagnes savoureuses avec une sauce bolognaise maison.",
+        "types": [
+            "long",
+            "viande",
+            "familliale"
+        ],
         "ingredients": [
             "Feuilles de lasagne",
             "Sauce bolognaise",
@@ -30,6 +39,10 @@ export const recipesData = [
         "name": "Salade César",
         "imgSrc": "https://picsum.photos/200/300",
         "description": "Une salade fraîche et croquante avec une délicieuse sauce César.",
+        "types": [
+            "rapide",
+            "vegetarien"
+        ],
         "ingredients": [
             "Laitue romaine",
             "Poulet grillé",
@@ -44,6 +57,9 @@ export const recipesData = [
         "name": "Risotto aux champignons",
         "imgSrc": "https://picsum.photos/200/300",
         "description": "Un savoureux risotto crémeux aux champignons sautés.",
+        "types": [
+            "long",
+        ],
         "ingredients": [
             "Riz Arborio",
             "Champignons",
@@ -58,6 +74,10 @@ export const recipesData = [
         "name": "Pâtes à la carbonara",
         "imgSrc": "https://picsum.photos/200/300",
         "description": "Des pâtes délicieusement crémeuses avec une sauce carbonara onctueuse.",
+        "types": [
+            "rapide",
+            "familliale"
+        ],
         "ingredients": [
             "Spaghettis",
             "Pancetta",
@@ -72,6 +92,10 @@ export const recipesData = [
         "name": "Tarte aux pommes",
         "imgSrc": "https://picsum.photos/200/300",
         "description": "Une tarte aux pommes classique avec une pâte croustillante et des pommes fondantes.",
+        "types": [
+            "long",
+            "dessert"
+        ],
         "ingredients": [
             "Pâte brisée",
             "Pommes",
@@ -85,6 +109,10 @@ export const recipesData = [
         "name": "Gâteau au chocolat",
         "imgSrc": "https://picsum.photos/200/300",
         "description": "Un gâteau au chocolat moelleux et fondant pour les amateurs de chocolat.",
+        "types": [
+            "long",
+            "dessert"
+        ],
         "ingredients": [
             "Chocolat noir",
             "Beurre",
@@ -99,6 +127,10 @@ export const recipesData = [
         "name": "Pizza Margherita",
         "imgSrc": "https://picsum.photos/200/300",
         "description": "Une pizza classique avec une base de tomate, de la mozzarella et du basilic.",
+        "types": [
+            "long",
+            "familliale"
+        ],
         "ingredients": [
             "Pâte à pizza",
             "Sauce tomate",
@@ -112,6 +144,10 @@ export const recipesData = [
         "name": "Smoothie aux fruits",
         "imgSrc": "https://picsum.photos/200/300",
         "description": "Un smoothie rafraîchissant à base de fruits frais et de yaourt.",
+        "types": [
+            "rapide",
+            "dessert"
+        ],
         "ingredients": [
             "Banane",
             "Fraises",
@@ -126,6 +162,10 @@ export const recipesData = [
         "name": "Salade de quinoa",
         "imgSrc": "https://picsum.photos/200/300",
         "description": "Une salade légère et nourrissante avec du quinoa, des légumes et une vinaigrette citronnée.",
+        "types": [
+            "rapide",
+            "vegetarien"
+        ],
         "ingredients": [
             "Quinoa",
             "Concombre",
@@ -140,6 +180,10 @@ export const recipesData = [
         "name": "Salade de quinoa",
         "imgSrc": "https://picsum.photos/200/300",
         "description": "Une salade légère et nourrissante avec du quinoa, des légumes et une vinaigrette citronnée.",
+        "types": [
+            "rapide",
+            "vegetarien"
+        ],
         "ingredients": [
             "Quinoa",
             "Concombre",

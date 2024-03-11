@@ -3,10 +3,15 @@ export interface Recipe {
     name: string;
     description: string;
     imgSrc: string;
+    types: string[];
     ingredients: string[];
     userId: number;
 };
 
 export interface RecipeCardProps {
-    recipe: Recipe
+    recipe: Recipe;
+};
+
+export interface RecipeTypeProps {
+    type: string;
 }
