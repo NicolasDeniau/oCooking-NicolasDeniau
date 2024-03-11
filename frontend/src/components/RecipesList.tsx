@@ -3,15 +3,17 @@ import { recipesData } from "../data";
 import RecipeCard from "./RecipeCard";
 import "../assets/styles/recipesList.scss";
 import { Recipe } from "../@types/recipe";
+import { useFetch } from "../hooks/useFetch";
 
 const RecipesList = () => {
     const [recipes, setRecipes] = useState<Recipe[]>(recipesData);
-    const [isLoading, setIsLoading] = useState(true);
+
+    const {isLoading, data, errors} = useFetch("/recipes");
 
     // useEffect, lorsque le composant est monté la fonction callback de useEffect s'execute
     useEffect(() => {
         setTimeout(() => {
-            setIsLoading(false);
+            //setIsLoading(false);
         }, 3000);
 
         // Lorsque le composant est démonté (unmounted), on execute une fonction de "destruction"

@@ -8,7 +8,7 @@ export const useFetch = (url: string, options = {}) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(url, options)
+                const response = await fetch(import.meta.env.VITE_API_URL + url, options)
 
                 const data = await response.json();
     
