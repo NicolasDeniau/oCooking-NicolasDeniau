@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 // Ajout d'un Generic Type avec <Type> à la fonction useFetch
-export const useFetch = <Type>(url: string, options = {}) => {
+export const useFetch = <T>(url: string, options = {}) => {
     const [isLoading, setIsLoading] = useState(true);
     // Ajout de <Type> afin d'avoir un type généralisé sur l'état data
-    const [data, setData] = useState<Type | null>(null);
+    const [data, setData] = useState<T | null>(null);
     const [errors, setErrors] = useState<unknown>(null);
 
     useEffect(() => {
