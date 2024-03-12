@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
-export const useFetch = (url: string, options = {}) => {
+// Ajout d'un Generic Type avec <Type> à la fonction useFetch
+export const useFetch = <Type>(url: string, options = {}) => {
     const [isLoading, setIsLoading] = useState(true);
-    const [data, setData] = useState(null);
+    // Ajout de <Type> afin d'avoir un type généralisé sur l'état data
+    const [data, setData] = useState<Type | null>(null);
     const [errors, setErrors] = useState<unknown>(null);
 
     useEffect(() => {
@@ -29,5 +31,3 @@ export const useFetch = (url: string, options = {}) => {
 
     return {isLoading, data, errors};
 };
-
-// Ce custom Hook est réutilisable et va nous permettre de récupérer n'importe quelle data de n"importe quelle API!!!!
