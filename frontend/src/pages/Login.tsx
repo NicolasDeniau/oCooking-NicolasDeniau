@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
-import { useNavigate } from "react-router-dom";
 import "../assets/styles/login.scss";
 import { login } from "../api/auth";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     useDocumentTitle("Connexion");
@@ -23,8 +23,10 @@ const Login = () => {
                 navigate("/");
             }
 
-        } catch(err) {
-            setError("Une erreur est survenue.")
+            throw Error("Vérifier vos identifiants");
+        } catch(err: any) {
+            setError(err);
+            console.log("Catch");
         }
     };
 
@@ -44,10 +46,10 @@ const Login = () => {
                 <label htmlFor="password">
                     <input
                         id="password"
-                        type="text"
+                        type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder="********" />
+                        placeholder="************" />
                 </label>
                 <button type="submit">Se connecter</button>
             </form>
