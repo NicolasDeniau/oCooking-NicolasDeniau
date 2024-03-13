@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import "../assets/styles/login.scss";
-import { login } from "../api/auth";
+// import { login } from "../api/auth"; on ne l'utilise plus maintenant qu'on a le contexte!
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/authContext";
 
 const Login = () => {
     useDocumentTitle("Connexion");
@@ -12,21 +13,22 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
+    // Utilisation du hook useContext afin d'utiliser le context et ses propriétés (états / fonctions)
+    const {login} = useContext(AuthContext);    
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         try {
-            const data = await login(email, password);
+            const success = await login(email, password);
 
-            if (data) {
-                localStorage.setItem("token", data.accessToken);
-                navigate("/");
+            if (success) {
+                navigate("/profil");
             }
 
-            throw Error("Vérifier vos identifiants");
-        } catch(err: any) {
-            setError(err);
-            console.log("Catch");
+            setError("Vérifier vos identifiants");
+        } catch(err) {
+            console.log(err);
         }
     };
 

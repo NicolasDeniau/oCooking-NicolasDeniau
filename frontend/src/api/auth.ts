@@ -23,3 +23,21 @@ export const login = async (email: string, password: string) => {
         console.log(err)
     }
 }
+
+export const currentUser = async (token: string) => {
+    try {
+        const response = await fetch(import.meta.env.VITE_API_URL + "/me", {
+            headers: {
+                "Authorization" : `Bearer ${token}`
+            }
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            return data;
+        }
+    } catch(err) {
+        console.error(err);
+    }
+}

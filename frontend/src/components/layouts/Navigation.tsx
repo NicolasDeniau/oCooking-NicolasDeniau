@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../../assets/styles/navigation.scss";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
 
 const Navigation = () => {
-  const [isAuth, setIsAuth] = useState(false);
-  const [fullName, setFullName] = useState<string>();
+  const {isAuth, user, logout} = useContext(AuthContext);
 
   // useEffect avec observation sur le changement de l'état isAuth
   useEffect(() => {
@@ -13,25 +13,11 @@ const Navigation = () => {
   // observation d'état
   [isAuth]);
 
-  const handleClick = () => {
-    setIsAuth(!isAuth);
-    
-    if (!isAuth) {
-      setFullName("Nicolas D");
-    } else {
-      setFullName(undefined);
-    }
+  const disconnection = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
 
-    // Ternary
-    // !isAuth ? setFullName("Nicolas D") : setFullName(undefined);
+    logout();
   }
-
-  const disconnection = (event: React.SyntheticEvent) => {
-    event.preventDefault();
-
-    setIsAuth(false);
-    setFullName(undefined);
-  };
 
   return (
     <nav>
@@ -42,14 +28,14 @@ const Navigation = () => {
         <li>
           <Link to="/a-propos">A propos</Link>
         </li>
-        {isAuth && fullName != "" && (
+        {isAuth && user && (
           <li>
-            <Link to="/profil">Profil: {fullName}</Link>
+            <Link to="/profil">Profil: {user.firstname} {user.lastname}</Link>
           </li>
         )}
         {isAuth ? (
           <li>
-            <a href="/" onClick={(event) => disconnection(event)}>Déconnexion</a>
+            <a href="/" onClick={(e) => disconnection(e)}>Déconnexion</a>
           </li>
         ) : (
           <li>
@@ -57,9 +43,6 @@ const Navigation = () => {
           </li>
         )}
       </ul>
-      <button onClick={() => handleClick()}>
-        {isAuth ? 'Se déconnecter' : 'Se connecter'}
-      </button>
     </nav>
   );
 };
